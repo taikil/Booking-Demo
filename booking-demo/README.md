@@ -1,5 +1,13 @@
 Here is my MoveMate Application Assignment, it was created using React and Chakra UI Library
 
+To Run:
+
+### `git clone https://github.com/taikil/Booking-Demo `
+
+### `npm i`
+
+### `npm start`
+
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
