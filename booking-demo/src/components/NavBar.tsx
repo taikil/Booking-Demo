@@ -1,17 +1,21 @@
-import { Divider, Flex, Heading, HStack, Link } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Link,
+  StackDivider,
+} from "@chakra-ui/react";
 import React from "react";
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 
-interface NavBarProps {}
-
-export const NavBar: React.FC<NavBarProps> = ({}) => {
+export const NavBar: React.FC = () => {
   return (
     <Flex bgColor={"teal.300"}>
-      <Heading>BookMate</Heading>
-      <HStack
-        divider={<Divider orientation="horizontal"></Divider>}
-        ml={"auto"}
-      >
+      <Button variant={"ghost"} borderRadius={"20px"}>
+        <Heading>BookMate</Heading>
+      </Button>
+      <HStack ml={"auto"} divider={<StackDivider />}>
         <Link>Book</Link>
         <Link>Contact</Link>
         <ColorModeSwitcher justifySelf="flex-end" />

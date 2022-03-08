@@ -1,16 +1,11 @@
-import { Box, ChakraProvider, Grid, VStack } from "@chakra-ui/react";
-import { NavBar } from "./components/NavBar";
-import theme from "./theme";
-import "@fontsource/abeezee";
+import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/comfortaa"; // Defaults to weight 400.
+import "@fontsource/raleway/400.css";
+import { Home } from "./pages/Home";
+import { theme } from "./style/theme";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <NavBar></NavBar>
-
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <VStack></VStack>
-      </Grid>
-    </Box>
+    <Home />
   </ChakraProvider>
 );
