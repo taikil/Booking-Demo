@@ -56,6 +56,7 @@ export const Book: React.FC = () => {
               <RangeSliderThumb boxSize={6} index={0} />
               <RangeSliderThumb boxSize={6} index={1} />
             </RangeSlider>
+            {/* I will admit the following is a terrible function */}
             Appointment Duration: {startTime}:00 - {endTime}:00 (
             {endTime - startTime} Hours)
           </Container>
