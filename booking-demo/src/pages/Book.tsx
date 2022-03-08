@@ -60,7 +60,7 @@ export const Book: React.FC = () => {
             Appointment Duration: {startTime}:00 - {endTime}:00 (
             {endTime - startTime} Hours)
           </Container>
-          {value.getDay() == 6 ? (
+          {value.getDay() === 6 ? (
             <Box>
               <Container>
                 Total Price: ${(endTime - startTime) * 150} CAD
@@ -72,7 +72,7 @@ export const Book: React.FC = () => {
                 price={(endTime - startTime) * 150}
               />
             </Box>
-          ) : value.getDay() == 0 ? (
+          ) : value.getDay() === 0 ? (
             <Box>
               <Container>
                 Total Price: ${(endTime - startTime) * 150} CAD
