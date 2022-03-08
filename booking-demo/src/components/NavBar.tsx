@@ -22,7 +22,9 @@ export const NavBar: React.FC = () => {
         <ReactLink to="Book">
           <Link>Book</Link>
         </ReactLink>
-        <Link>Contact</Link>
+        <a target="_blank" href="https://github.com/taikil/Booking-Demo">
+          <Link>Contact</Link>
+        </a>
         <ColorModeSwitcher justifySelf="flex-end" />
       </HStack>
     </Flex>

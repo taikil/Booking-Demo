@@ -13,12 +13,14 @@ import {
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { ConfirmButton } from "../components/ConfirmButton";
 import { NavBar } from "../components/NavBar";
 
 export const Book: React.FC = () => {
   const [value, onChange] = useState(new Date());
   const [startTime, setStartTime] = useState(9);
   const [endTime, setEndTime] = useState(11);
+  const [price, setPrice] = useState(0);
 
   return (
     <Box>
@@ -46,8 +48,8 @@ export const Book: React.FC = () => {
               min={9}
               max={18}
               step={1}
-              colorScheme={"teal"}
-              onChangeEnd={(val) => (setStartTime(val[0]), setEndTime(val[1]))}
+              colorScheme={"cyan"}
+              onChange={(val) => (setStartTime(val[0]), setEndTime(val[1]))}
             >
               <RangeSliderTrack>
                 <RangeSliderFilledTrack />
@@ -55,9 +57,29 @@ export const Book: React.FC = () => {
               <RangeSliderThumb boxSize={6} index={0} />
               <RangeSliderThumb boxSize={6} index={1} />
             </RangeSlider>
-            Appointment Duration: {startTime} - {endTime} ({endTime - startTime}{" "}
-            Hours)
+            Appointment Duration: {startTime}:00 - {endTime}:00 (
+            {endTime - startTime} Hours)
           </Container>
+          {value.getDay() == 6 ? (
+            <Container>
+              Total Price: ${(endTime - startTime) * 150} CAD
+            </Container>
+          ) : value.getDay() == 0 ? (
+            <Container>
+              Total Price: ${(endTime - startTime) * 150} CAD
+            </Container>
+          ) : (
+            <Container>
+              Total Price: ${(endTime - startTime) * 100} CAD
+              {/* {setPrice(endTime - startTime * 100)} */}
+            </Container>
+          )}
+          <ConfirmButton
+            day={value.getDay()}
+            month={value.getMonth() + 1}
+            year={value.getFullYear()}
+            price={0}
+          />
         </VStack>
       </Container>
     </Box>
