@@ -1,20 +1,17 @@
 import { ColorModeScript } from "@chakra-ui/react";
+import "@fontsource/open-sans/700.css";
+import "@fontsource/raleway/400.css";
 import * as React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
-import "@fontsource/raleway/400.css";
-import "@fontsource/open-sans/700.css";
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <ColorModeScript />
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <ColorModeScript />
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

@@ -5,18 +5,12 @@ import {
   Center,
   Container,
   StackDivider,
-  Table,
-  TableCaption,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
-import { Navigate } from "react-router";
+import { Prices } from "../components/Prices";
 
 export const Home: React.FC = () => {
   return (
@@ -28,40 +22,22 @@ export const Home: React.FC = () => {
       <Container mt={4}>
         <VStack ml={2} alignContent={"flex-start"} divider={<StackDivider />}>
           <Container>
-            Book an appointment with one of our experts in just a few clicks!
+            Book an appointment with one of our experts in just a few minutes!
           </Container>
           <Container>Our Rates:</Container>
-          <Table variant="striped" colorScheme="teal">
-            <TableCaption>*Prices are in CAD</TableCaption>
-            <Thead>
-              <Tr>
-                <Th>Time of Week</Th>
-                <Th isNumeric>Hourly Rate</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              <Tr>
-                <Td>Weekdays</Td>
-                <Td isNumeric>$100</Td>
-              </Tr>
-              <Tr>
-                <Td>feet</Td>
-                <Td isNumeric>$150</Td>
-              </Tr>
-            </Tbody>
-          </Table>
+          <Prices />
+          <Container centerContent={true}>
+            {" "}
+            Our Hours: 9am-6pm | 7 days a week
+          </Container>
           <Button
             marginTop={4}
             width={"520px"}
             colorScheme={"teal"}
             variant={"outline"}
             borderRadius={"20px"}
-            onClick={() => {
-              Navigate({ to: `/` });
-            }}
           >
-            {" "}
-            Book Now!
+            <Link to="Book"> Book Now!</Link>
           </Button>
         </VStack>
       </Container>
