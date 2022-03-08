@@ -20,7 +20,6 @@ export const Book: React.FC = () => {
   const [value, onChange] = useState(new Date());
   const [startTime, setStartTime] = useState(9);
   const [endTime, setEndTime] = useState(11);
-  const [price, setPrice] = useState(0);
 
   return (
     <Box>
@@ -61,25 +60,43 @@ export const Book: React.FC = () => {
             {endTime - startTime} Hours)
           </Container>
           {value.getDay() == 6 ? (
-            <Container>
-              Total Price: ${(endTime - startTime) * 150} CAD
-            </Container>
+            <Box>
+              <Container>
+                Total Price: ${(endTime - startTime) * 150} CAD
+              </Container>
+              <ConfirmButton
+                day={value.getDate()}
+                month={value.getMonth() + 1}
+                year={value.getFullYear()}
+                price={(endTime - startTime) * 150}
+              />
+            </Box>
           ) : value.getDay() == 0 ? (
-            <Container>
-              Total Price: ${(endTime - startTime) * 150} CAD
-            </Container>
+            <Box>
+              <Container>
+                Total Price: ${(endTime - startTime) * 150} CAD
+              </Container>
+              <ConfirmButton
+                day={value.getDate()}
+                month={value.getMonth() + 1}
+                year={value.getFullYear()}
+                price={(endTime - startTime) * 150}
+              />
+            </Box>
           ) : (
-            <Container>
-              Total Price: ${(endTime - startTime) * 100} CAD
-              {/* {setPrice(endTime - startTime * 100)} */}
-            </Container>
+            <Box>
+              <Container>
+                Total Price: ${(endTime - startTime) * 100} CAD
+                {/* {setPrice(endTime - startTime * 100)} */}
+              </Container>
+              <ConfirmButton
+                day={value.getDate()}
+                month={value.getMonth() + 1}
+                year={value.getFullYear()}
+                price={(endTime - startTime) * 100}
+              />
+            </Box>
           )}
-          <ConfirmButton
-            day={value.getDay()}
-            month={value.getMonth() + 1}
-            year={value.getFullYear()}
-            price={0}
-          />
         </VStack>
       </Container>
     </Box>

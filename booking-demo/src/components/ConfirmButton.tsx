@@ -47,7 +47,7 @@ export const ConfirmButton: React.FC<ConfirmButtonProps> = ({
             <Container>
               Date Of Booking: {day}/{month}/{year}
             </Container>
-            <Container>Total Price: {price}</Container>
+            <Container>Total Price: ${price}</Container>
             <Container>Thank you for booking with us!</Container>
           </VStack>
         </PopoverBody>
